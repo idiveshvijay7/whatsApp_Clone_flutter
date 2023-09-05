@@ -22,6 +22,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
+  final contoller = Get.put(AuthController());
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -31,23 +32,24 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: backgroundColor,
           appBarTheme: const AppBarTheme(color: appBarColor)),
       getPages: getPage,
-      home: LandingScreen(),
       // initialRoute: "/landing",
-      // home: GetBuilder<AuthController>(
-      //       initState: (_) {},
-      //       builder: (_) {
-      //             // final user = _.currentUser;
-      //             // print(user);
-      //             // if (user != null) {
-      //             //   return MobileLayoutScreen();
-      //             // } else if (_.hasError.value) {
-      //             //   return ErrorScreen(
-      //             //     error: 'Having some error in fetching the user',
-      //             //   );
-      //             // } else {
-      //               return LandingScreen();
-      //             // }
-      // }),
+      // home: LandingScreen(),
+      home: GetBuilder<AuthController>(initState: (_) {
+        // Initialize user data in the AuthController
+        contoller.getCurrentUserData();
+      }, builder: (_) {
+        final user = contoller.currentUser;
+        // print(user);
+        if (user != null) {
+          return MobileLayoutScreen();
+        } else if (_.hasError.value) {
+          return ErrorScreen(
+            error: 'Having some error in fetching the user',
+          );
+        } else {
+          return LandingScreen();
+        }
+      }),
     );
   }
 }

@@ -106,17 +106,18 @@ class BottomChatField extends StatelessWidget {
                     onTap: () {
                       controller.sendTextMessage(
                           recieverUserId: recieverUserId);
+                      controller.messageController.clear();
                     }),
               ),
             ),
           ],
         ),
-        SizedBox(
-          height: 310,
-          child: EmojiPicker(
-            onEmojiSelected: ((category, emoji) {}),
-          ),
-        )
+        // SizedBox(
+        //   height: 310,
+        //   child: EmojiPicker(
+        //     onEmojiSelected: ((category, emoji) {}),
+        //   ),
+        // )
         // : const SizedBox(),
       ],
     );

@@ -30,9 +30,9 @@ class MyMessageCard extends StatelessWidget {
     // final isReplying = repliedText.isNotEmpty;
 
     return SwipeTo(
-      onLeftSwipe: () {},
+      onRightSwipe: () {},
       child: Align(
-        alignment: Alignment.centerRight,
+        alignment: Alignment.centerLeft,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width - 45,
@@ -54,31 +54,6 @@ class MyMessageCard extends StatelessWidget {
                         ),
                   child: Column(
                     children: [
-                      // if (isReplying) ...[
-                      //   Text(
-                      //     username,
-                      //     style: const TextStyle(
-                      //       fontWeight: FontWeight.bold,
-                      //     ),
-                      //   ),
-                      //   const SizedBox(height: 3),
-                      //   Container(
-                      //     padding: const EdgeInsets.all(10),
-                      //     decoration: BoxDecoration(
-                      //       color: backgroundColor.withOpacity(0.5),
-                      //       borderRadius: const BorderRadius.all(
-                      //         Radius.circular(
-                      //           5,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     child: DisplayTextImageGIF(
-                      //       message: repliedText,
-                      //       type: repliedMessageType,
-                      //     ),
-                      //   ),
-                      //   const SizedBox(height: 8),
-                      // ],
                       Text(
                         message,
                         style: const TextStyle(

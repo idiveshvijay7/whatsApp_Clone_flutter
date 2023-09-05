@@ -26,12 +26,18 @@ class ChatPage extends StatelessWidget {
         ),
       ),
       body: GetX<IndividualScreenController>(
+        init: IndividualScreenController(), // Ensure the controller is properly initialized.
         builder: (_) {
-          return ListView.builder(
-            itemCount: 3,
-            itemBuilder: (context, index) => CustomCard(
-                chatModel: _.chatContacts[index]), //+2 for header and footer
-          );
+          if (_.chatContacts.isEmpty) {
+            return Center(child: const CircularProgressIndicator()); // Show a loading indicator while data is loading.
+          } else {
+            return ListView.builder(
+              itemCount: _.chatContacts.length,
+              itemBuilder: (context, index) => CustomCard(
+                chatModel: _.chatContacts[index],
+              ),
+            );
+          }
         },
       ),
     );

@@ -39,13 +39,15 @@ class SelectContactController extends GetxController {
             selectedContact.phones[0].number.replaceAll(' ', '');
         if (selectedPhoneNum == userData.phoneNumber) {
           isFound = true;
-          Get.toNamed(
-            '/individual',
+          // Get.toNamed("/landing");
+          Get.offNamed(
+            "/individual",
             arguments: {
-              'name': userData.name,
-              'uid': userData.uid,
+              'name' : userData.name,
+              'uid' : userData.uid,
             },
-          ); 
+          );
+          break;
         }
       }
 

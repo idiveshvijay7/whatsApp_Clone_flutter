@@ -25,8 +25,9 @@ List<GetPage<dynamic>> getPage = [
   GetPage(
       name: "/individual",
       page: () {
-        final name = Get.arguments as String;
-        final uid = Get.arguments as String;
+        final Map<String, dynamic> arguments = Get.arguments as Map<String, dynamic>;
+        final String name = arguments['name'] as String;
+        final String uid = arguments['uid'] as String;
         return IndividualScreen(
           name: name,
           uid: uid,

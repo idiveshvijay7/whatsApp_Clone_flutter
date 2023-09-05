@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsapp_assignment/controller/auth_controller.dart';
 
 import 'common/color.dart';
 import 'common/widgets/CustomButton.dart';
 
 class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+  // LandingScreen({Key? key}) : super(key: key);
 
-  // void navigateToLoginScreen(BuildContext context) {
-  //   Navigator.pushNamed(context, LoginScreen.routeName);
-  // }
+  // // void navigateToLoginScreen(BuildContext context) {
+  // //   Navigator.pushNamed(context, LoginScreen.routeName);
+  // // }
+  
 
   @override
   Widget build(BuildContext context) {

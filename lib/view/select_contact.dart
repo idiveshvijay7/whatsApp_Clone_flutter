@@ -40,12 +40,12 @@ class SelectContact extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
-                controller.contacts.length.toString(),
-                style: TextStyle(
-                  fontSize: 13,
-                ),
-              )
+              Obx(() => Text(
+                    controller.contacts.length.toString(),
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
+                  ))
             ],
           ),
           actions: [
